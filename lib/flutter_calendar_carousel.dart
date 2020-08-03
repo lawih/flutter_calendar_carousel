@@ -310,6 +310,7 @@ class _CalendarState<T extends EventInterface> extends State<CalendarCarousel<T>
 
   @override
   void didUpdateWidget(CalendarCarousel<T> oldWidget) {
+    _localeDate = DateFormat.yMMM(widget.locale);
     if (widget.targetDateTime != null && widget.targetDateTime != _targetDate) {
       DateTime targetDate = widget.targetDateTime;
       if (widget.targetDateTime.difference(minDate).inDays < 0) {
